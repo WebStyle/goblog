@@ -17,9 +17,17 @@ func main() {
     for message := range messages {
         fmt.Println(message.Sender)
         fmt.Println(message.Text)
-        if message.Text == "/hi" {
-            bot.SendMessage(message.Chat,
-                "Hello, "+message.Sender.FirstName+"!", nil)
+        switch message.Text {
+          case "/start":
+            bot.SendMessage(message.Chat, "Welcome to telegram chat "+message.Sender.FirstName+"!", nil)
+          case "/setup":
+            bot.SendMessage(message.Chat, "Setup form", nil)
+          case "/online":
+            bot.SendMessage(message.Chat, "Online list", nil)
+          case ":userName":
+            bot.SendMessage(message.Chat, "Send message bor :userName", nil)
+          defult:
+            bot.SendMessage(message.Chat, "Please select command", nil)
         }
     }
 }
