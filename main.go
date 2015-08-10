@@ -26,8 +26,6 @@ func main() {
             bot.SendMessage(message.Chat, "Online list", nil)
           case ":userName":
             bot.SendMessage(message.Chat, "Send message bor :userName", nil)
-          defult:
-            bot.SendMessage(message.Chat, "Please select command", nil)
         }
     }
 }
