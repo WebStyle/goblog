@@ -18,8 +18,10 @@ func main() {
         fmt.Println(message.Sender)
         fmt.Println(message.Text)
         switch message.Text {
-          case "/start":
-            bot.SendMessage(message.Chat, "Welcome to telegram chat "+message.Sender.FirstName+"!", nil)
+	        case "/start":
+	          bot.SendMessage(message.Chat, "Hi, i'm Telegram bot. Let's start sign up please\n /setup - send my this text", nil)
+          case "/help":
+            bot.SendMessage(message.Chat, " Welcome to telegram chat!\n You can use this futures:\n  /online - see online users\n /share - share\n /search - search friends\n /rating - the must populer users\n /votemap  - votemap\n /settings - my profile settings\n /help - help\n have fun !", nil)
           case "/setup":
             bot.SendMessage(message.Chat, "Setup form", nil)
           case "/online":
