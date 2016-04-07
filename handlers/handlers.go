@@ -7,6 +7,7 @@ import (
 
 	"goblog/models"
 )
+
 // Index Page
 func IndexHandler(w http.ResponseWriter, r *http.Request) {
   	t := template.New("index")
@@ -28,12 +29,13 @@ func PostCreateHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func PostSaveHandler(w http.ResponseWriter, r *http.Request) {
+
 	title 	:= r.FormValue("title")
 	content := r.FormValue("content")
 
 	result := Post.NewPost(title, content)
 	fmt.Println(result)
-	w.Write([]byte("Post saved"))
+
 }
 
 func AboutHandler(w http.ResponseWriter, r *http.Request) {

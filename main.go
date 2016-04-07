@@ -1,15 +1,15 @@
 package main
 
 import (
-	"net/http"
 	"goblog/handlers"
+	"net/http"
 )
 
 func main() {
 
 	// Routing
 	http.HandleFunc("/", handlers.IndexHandler)
-  	http.HandleFunc("/post/", handlers.PostCreateHandler)
+	http.HandleFunc("/post/", handlers.PostCreateHandler)
 	http.HandleFunc("/post/save", handlers.PostSaveHandler)
 	http.HandleFunc("/about/", handlers.AboutHandler)
 
